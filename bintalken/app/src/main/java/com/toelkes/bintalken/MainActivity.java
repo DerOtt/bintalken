@@ -51,8 +51,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         webView.loadUrl("https://binhacken.app");
-        String cookies = CookieManager.getInstance().getCookie("https://binhacken.app");
-        Log.d("Cookies", cookies);
+
 
         FirebaseInstanceId.getInstance().getInstanceId()
                 .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
@@ -80,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                                 urlc.connect();
                                 if (urlc.getResponseCode() == 200){
                                     Toast.makeText(MainActivity.this, "Token successfully sent", Toast.LENGTH_LONG).show();
+                                    Log.d("URLTEST", "TOKEN SENT TO WEBSITE");
                                 }
                                 else{
                                     Toast.makeText(MainActivity.this, "Token not sent, please restart the app or contact the dev", Toast.LENGTH_LONG).show();
